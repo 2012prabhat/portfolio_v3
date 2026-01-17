@@ -7,6 +7,24 @@ import slide from "@/data/myInfo.json";
 function LeftContent() {
   const { themeColors } = useSelector((state) => state.themeReducer);
 
+  function calculateExperience(startDate) {
+  const start = new Date(startDate);
+  const now = new Date();
+
+  let years = now.getFullYear() - start.getFullYear();
+  let months = now.getMonth() - start.getMonth();
+
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+
+  return { years, months };
+}
+
+// Usage
+const experience = calculateExperience("2022-07-01");
+
   return (
     <div className="w-full lg:w-1/2 mx-auto shrink-0 lg:mx-0 py-8 lg:py-12 order-2 lg:order-1 text-center lg:text-left">
       <div className="mt-0">
@@ -50,7 +68,7 @@ function LeftContent() {
           className="text-sm md:text-base max-w-2xl mt-8"
           style={{ color: themeColors.summeryText }}
         >
-          {slide.subtitle}
+          {slide?.subtitle?.replace("X", experience.years).replace("Y", experience.months)}
         </p>
       </div>
 

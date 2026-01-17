@@ -1,40 +1,47 @@
 {
   "id": "coding-bundle",
-  "subtitle": "I build high-performance, type-safe applications with Next.js and TypeScript. I turn complex data flow challenges into seamless user experiences, delivering 90+ Lighthouse scores and production-ready, stable code.",
+  "subtitle": "I am a frontend developer with X years and Y months of experience, building high-performance web applications using React and Next.js. I focus on optimizing performance, handling complex data flows, and creating smooth user experiences that consistently achieve 90+ Lighthouse scores with production-ready stability.",
   "badge": "Frontend / MERN Stack </>",
   "gradient": "from-green-400 via-cyan-400 to-blue-500",
   "buttonColor": "from-green-500 to-cyan-500",
-  "image": "/Sachin-front-end-developer.webp",
+  "image": "/profilePic.jpg",
   "experience": [
     {
-      "title": "Collaborating with Backend Developer on Full Stack Freelance Projects",
-      "location": "Frontend Developer",
-      "duration": "Jul 2025 - Present",
+      "title": "Global Survey Solutions Pvt. Ltd.",
+      "location": "Web Developer",
+      "duration": "July 2022 - Present",
       "description": [
-        "Delivered multiple production-grade full-stack projects, achieving a 20% reduction in page load times by implementing Next.js optimization techniques, fully type-safe UIs using TypeScript and TanStack Query. ",
-        "Partnered with backend developer to integrate complex RESTful APIs, utilizing Jira for Agile task tracking and Husky/ESLint to maintain code consistency."
+        "Delivered multiple production-grade full-stack applications using React and Next.js, improving page load performance by 20% through code-splitting, image optimization, and server-side rendering techniques.",
+        "Collaborated closely with backend developers to integrate complex RESTful APIs, ensuring efficient data handling, error management, and a seamless user experience.",
+        "Implemented reusable component architectures and scalable state management patterns, improving development speed, maintainability, and long-term application stability while working in Agile workflows using Jira."
       ],
       "icon": "💻"
     }
   ],
   "education": [
     {
-      "location": "Dedicated full-time effort to mastering modern technologies with professional coding standards.",
-      "duration": "2024 - Present",
-      "title": "Frontend Specialization & Modern Web Development ",
+      "title": "Full Stack Web Development Course",
+      "courseName": "Pepcoding Institute, Delhi",
+      "duration": "2021 - 2022",
       "icon": "💻"
     },
     {
-      "location": "Bachelor of Computer Applications (BCA)",
-      "duration": "2021 - 2024",
-      "title": "Amity University, Noida",
+      "title": "Bachelor of Technology in Computer Science and Engineering",
+      "courseName": "IILM College of Engineering and Technology, Greater Noida",
+      "duration": "2016 - 2020",
       "icon": "🎓"
     },
     {
-      "location": "Higher Secondary Certificate",
-      "duration": "End in 2021",
-      "title": "H.S Public School",
+      "title": "Higher Secondary (12th – Intermediate)",
+      "courseName": "Seth Bhagwan Dass Sr. Sec. School - CBSE Board, Delhi",
+      "duration": "2015 - 2016",
       "icon": "🏫"
+    },
+    {
+      "title": "Secondary School (10th – High School)",
+      "courseName": "Arwachin Bharti Bhawan Sr. Sec. School - CBSE Board, Delhi",
+      "duration": "2013 - 2014",
+      "icon": "📘"
     }
   ],
   "techIcons": [

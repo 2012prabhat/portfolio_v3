@@ -4,6 +4,7 @@ import slide from "@/data/myInfo.json";
 import useWindowSize from "@/hooks/useWindowSize";
 
 function ScrollingImages() {
+  
   const { themeColors, theme } = useSelector((state) => state.themeReducer);
   const [isHovered, setIsHovered] = useState(false);
   const [hoveredIcon, setHoveredIcon] = useState(null);
@@ -13,10 +14,10 @@ function ScrollingImages() {
   const getContainerSize = () => {
     if (!windowSize.width) return 300; // Default before hydration
 
-    if (windowSize.width >= 1280) return 500; // xl screens
-    if (windowSize.width >= 1024) return 450; // lg screens
-    if (windowSize.width >= 768) return 400; // md screens
-    if (windowSize.width >= 640) return 350; // sm screens
+    if (windowSize.width >= 1280) return 400; // xl screens
+    if (windowSize.width >= 1024) return 350; // lg screens
+    if (windowSize.width >= 768) return 300; // md screens
+    if (windowSize.width >= 640) return 250; // sm screens
     return Math.min(300, windowSize.width - 40); // xs screens
   };
 
@@ -188,7 +189,7 @@ function ScrollingImages() {
                     className="font-bold"
                     style={{ color: themeColors.primaryColor }}
                   >
-                    Sachin
+                    Prabhat
                   </span>{" "}
                   — a Frontend Developer.
                 </p>
@@ -206,7 +207,7 @@ function ScrollingImages() {
           {/* image wraper */}
           <div className="w-full h-full relative">
             <img
-              alt="Sachin - Frontend Developer"
+              alt="Prabhat - Frontend Developer"
               src={slide.image}
               className="absolute top-[58%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"
               style={{

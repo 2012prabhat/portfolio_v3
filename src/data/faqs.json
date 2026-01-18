@@ -1,38 +1,48 @@
 [
   {
     "question": "What technologies do you specialize in?",
-    "answer": "I specialize in the modern Next.js ecosystem, combining full-stack development with DevOps principles. My core stack includes TypeScript, Next.js (App Router), and Docker for containerization. I build robust backends using both the MERN stack and serverless solutions like Convex, ensuring end-to-end type safety."
+    "answer":
+      "I specialize in building modern web applications using React.js and Next.js. My core expertise lies in the Next.js App Router, component-driven UI development, and managing complex client-side state. I focus on writing clean, scalable, and performance-optimized frontend code with modern tooling."
   },
   {
     "question": "What kind of projects have you built?",
-    "answer": "I build production-ready systems, not just hobby projects. My flagship app, 'Ezensi' (Live), is an AI-Native Blog Platform containerized with Docker and deployed via CI/CD on Render. I've also architected 'ShopEase,' a high-performance eCommerce app with advanced caching, and a secure Next.js full-stack system with custom auth."
-  },
-  {
-    "question": "Do you have experience with DevOps and Deployment?",
-    "answer": "Yes. I move beyond basic deployments by using Docker to containerize applications, ensuring consistent environments from development to production. I implement Multi-Stage builds to optimize image sizes (reducing my latest app to ~276MB) and set up automated CI/CD pipelines on platforms like Render."
-  },
-  {
-    "question": "How do you ensure code quality and stability?",
-    "answer": "I enforce quality through both tools and process. I use Husky and ESLint for strict pre-commit checks and Zod for runtime data validation. On the process side, I track bugs and features using Jira, ensuring nothing slips through the cracks before deployment."
+    "answer":
+      "I have built a variety of real-world, production-ready applications. These include ChatWise, an AI chatbot integration platform; CheckInn, a hotel booking and payment system; 5th Poll, a survey and rewards platform; and CareBuddy, a healthcare appointment management system. My projects focus on real user flows, dashboards, and scalable UI architecture."
   },
   {
     "question": "Do you have full-stack development experience?",
-    "answer": "Yes, I am comfortable across the entire stack. I build scalable backends using Node.js/Express (MERN) and Serverless (Convex). My expertise includes designing database schemas (MongoDB/MySQL), handling complex state with Redux/TanStack Query, and securing APIs with Clerk or custom JWT implementation."
+    "answer":
+      "Yes. Alongside frontend development with React and Next.js, I have experience building full-stack applications using Node.js, Express, MongoDB, and PostgreSQL. I handle API design, authentication, database integration, and frontend-backend communication confidently."
   },
   {
-    "question": "Are your projects mobile responsive?",
-    "answer": "Absolutely. I follow a mobile-first approach using Tailwind CSS and Shadcn UI. I rigorously test across devices to ensure seamless UX, maintaining 90+ Lighthouse performance scores even on mobile networks."
+    "question": "How do you manage state and data fetching?",
+    "answer":
+      "I use modern state management solutions such as Zustand, Redux Toolkit, Context API, and TanStack Query depending on the complexity of the application. For Next.js projects, I leverage Server Components and Server Actions where appropriate to simplify data flow."
   },
   {
-    "question": "How do you optimize application performance?",
-    "answer": "Performance is a priority. I use TanStack Query for aggressive caching and Next.js Server Actions to minimize client-side JavaScript. I also optimize Docker images for faster cold starts and implement debouncing and code-splitting to keep the application lightweight."
+    "question": "How do you ensure code quality and maintainability?",
+    "answer":
+      "I focus on writing readable, modular code with reusable components and clear separation of concerns. I follow consistent folder structures, meaningful naming conventions, and component composition patterns to keep projects maintainable as they grow."
   },
   {
-    "question": "What is your approach to security?",
-    "answer": "I believe in security by design. I implement HTTP-only cookies for session management, use Bcrypt for password hashing, and protect API routes with Middleware. I also ensure strict environment variable isolation to keep production secrets safe."
+    "question": "Are your applications mobile responsive?",
+    "answer":
+      "Yes, all my projects are fully responsive and follow a mobile-first approach. I use Tailwind CSS, Material UI, and modern CSS techniques to ensure consistent UI and smooth user experience across devices and screen sizes."
   },
   {
-    "question": "What is your development workflow?",
-    "answer": "I simulate a professional Agile environment. I manage my projects using Jira, breaking down features into Epics and User Stories. I work in sprints, manage code via GitHub with clear commit messages, and use CI/CD pipelines to automate testing and deployment."
-  }
+    "question": "How do you optimize frontend performance?",
+    "answer":
+      "I optimize performance by reducing unnecessary re-renders, splitting components effectively, and leveraging Next.js features like image optimization and server-side rendering. I also focus on efficient data fetching and clean UI logic to maintain high Lighthouse scores."
+  },
+  {
+    "question": "What is your approach to authentication and security?",
+    "answer":
+      "I implement secure authentication using JWT-based systems or provider-based auth depending on the project. I ensure protected routes, role-based access where required, and proper handling of sensitive user data across the application."
+  },
+  {
+    "question": "What type of roles are you targeting?",
+    "answer":
+    "I am targeting Frontend and Full-Stack Developer roles, especially positions focused on React.js and Next.js. I enjoy working across the stack—building interactive user interfaces, integrating APIs, and contributing to end-to-end product development with a strong focus on user experience and clean architecture."
+}
+
 ]

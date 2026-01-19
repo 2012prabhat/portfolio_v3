@@ -10,12 +10,13 @@ const SectionHeader = ({ title, subtitle, highlight, align = "center" }) => {
   };
 
   return (
-    <motion.div
-      className={`mb-16 ${alignmentClasses[align]} max-w-3xl`}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7 }}
-    >
+<motion.div
+  className={`mb-16 ${alignmentClasses[align]} max-w-3xl`}
+  initial={{ opacity: 0, x: 60 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: false, amount: 0.3 }}
+  transition={{ duration: 0.7, ease: "easeOut" }}
+>
       <motion.h2
         className={`text-4xl md:text-5xl font-bold mb-4`}
         style={{ color: themeColors.text }}

@@ -1,55 +1,49 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 
-
 function Form({ itemVariants }) {
   const { themeColors } = useSelector((state) => state.themeReducer);
-  const form = useRef();
-  const [status, setStatus] = useState(null); // null, 'success', or 'error'
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const [status, setStatus] = useState(null); // null | success | error
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const inputValue = [
-    { name: "your_name", placeholder: "Your Name" },
-    { name: "your_email", placeholder: "Your Email" },
-    { name: "subject", placeholder: "Subject" },
-  ];
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
 
-  const sendEmail = async (e) => {
-  e.preventDefault();
-  setIsSubmitting(true);
-  setStatus(null);
+  const sendMessage = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setStatus(null);
+    try {
+      const response = await fetch("/api/contactUs", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-  try {
-    const formData = new FormData(form.current);
-
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      body: JSON.stringify({
-        name: formData.get("name"),
-        email: formData.get("email"),
-        message: formData.get("message"),
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-
-    if (!response.ok) {
-      throw new Error("Failed to send message");
+      if (!response.ok) throw new Error("Failed to send message");
+      setStatus("success");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error(error);
+      setStatus("error");
+    } finally {
+      setIsSubmitting(false);
     }
+  };
 
-    setStatus("success");
-    form.current.reset();
-  } catch (error) {
-    console.error("FAILED...", error);
-    setStatus("error");
-  } finally {
-    setIsSubmitting(false);
-  }
-};
-
-  // Status message component
   const StatusMessage = () => {
     if (!status) return null;
 
@@ -103,102 +97,77 @@ function Form({ itemVariants }) {
 
       <StatusMessage />
 
-      <form ref={form} className="space-y-6" onSubmit={sendEmail}>
-        {inputValue.map((elem, i) => (
-          <motion.div
-            key={i}
-            variants={itemVariants}
-            whileHover={{ scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-          >
-            <input
-              type={elem.placeholder === "Your Email" ? "email" : "text"}
-              name={elem.name}
-              placeholder={elem.placeholder}
-              required
-              disabled={isSubmitting}
-              className="w-full px-5 py-3 rounded-lg text-sm bg-transparent focus:outline-none focus:ring-2 transition-all duration-300 disabled:opacity-70"
-              style={{
-                border: `1px solid ${themeColors.border}`,
-                color: themeColors.text,
-                boxShadow: `0 2px 4px ${themeColors.border}20`,
-              }}
-            />
-          </motion.div>
-        ))}
-        <motion.div
-          variants={itemVariants}
-          whileHover={{ scale: 1.02 }}
-          transition={{ type: "spring", stiffness: 400, damping: 10 }}
-        >
-          <textarea
-            rows="5"
-            placeholder="Your Message"
-            name="message"
+      <form onSubmit={sendMessage} className="space-y-6">
+        {/* Name */}
+        <motion.div variants={itemVariants} whileHover={{ scale: 1.02 }}>
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
             required
             disabled={isSubmitting}
             className="w-full px-5 py-3 rounded-lg text-sm bg-transparent focus:outline-none focus:ring-2 transition-all duration-300 disabled:opacity-70"
             style={{
               border: `1px solid ${themeColors.border}`,
               color: themeColors.text,
-              boxShadow: `0 2px 4px ${themeColors.border}20`,
-              caretColor: themeColors.text,
             }}
-          ></textarea>
+          />
         </motion.div>
 
+        {/* Email */}
+        <motion.div variants={itemVariants} whileHover={{ scale: 1.02 }}>
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            disabled={isSubmitting}
+            className="w-full px-5 py-3 rounded-lg text-sm bg-transparent focus:outline-none focus:ring-2 transition-all duration-300 disabled:opacity-70"
+            style={{
+              border: `1px solid ${themeColors.border}`,
+              color: themeColors.text,
+            }}
+          />
+        </motion.div>
+
+        {/* Message */}
+        <motion.div variants={itemVariants} whileHover={{ scale: 1.02 }}>
+          <textarea
+            rows="5"
+            name="message"
+            placeholder="Your Message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+            disabled={isSubmitting}
+            className="w-full px-5 py-3 rounded-lg text-sm bg-transparent focus:outline-none focus:ring-2 transition-all duration-300 disabled:opacity-70"
+            style={{
+              border: `1px solid ${themeColors.border}`,
+              color: themeColors.text,
+              caretColor: themeColors.text,
+            }}
+          />
+        </motion.div>
+
+        {/* Submit */}
         <motion.button
           type="submit"
           disabled={isSubmitting}
-          className="w-full py-3 rounded-lg font-medium transition-all duration-300 relative"
+          className="w-full py-3 rounded-lg font-medium transition-all duration-300"
           style={{
             backgroundColor: isSubmitting
               ? `${themeColors.primaryColor}80`
               : themeColors.primaryColor,
             color: "#fff",
-            boxShadow: `0 4px 6px ${themeColors.primaryColor}40`,
           }}
-          variants={itemVariants}
-          whileHover={
-            !isSubmitting
-              ? {
-                  scale: 1.02,
-                  boxShadow: `0 6px 8px ${themeColors.primaryColor}60`,
-                }
-              : {}
-          }
+          whileHover={!isSubmitting ? { scale: 1.02 } : {}}
           whileTap={!isSubmitting ? { scale: 0.98 } : {}}
         >
-          {isSubmitting ? (
-            <div className="flex justify-center items-center">
-              <svg
-                className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <circle
-                  className="opacity-25"
-                  cx="12"
-                  cy="12"
-                  r="10"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                ></circle>
-                <path
-                  className="opacity-75"
-                  fill="currentColor"
-                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                ></path>
-              </svg>
-              Sending...
-            </div>
-          ) : (
-            <>
-              Send Message
-              <span className="ml-2">→</span>
-            </>
-          )}
+          {isSubmitting ? "Sending..." : "Send Message →"}
         </motion.button>
       </form>
     </motion.div>

@@ -55,7 +55,7 @@ const Footer = () => {
                 className="text-3xl font-light mb-2"
                 style={{ color: themeColors.primaryColor }}
               >
-                Sachin Sehrawat
+                Prabhat Kumar
               </h2>
               <p
                 className="text-sm uppercase tracking-wider opacity-75"
@@ -115,7 +115,7 @@ const Footer = () => {
               Open to freelance, consulting, or just a tech chat over coffee.
             </p>
             <motion.a
-              href="https://www.linkedin.com/in/sachinpro/"
+              href="https://www.linkedin.com/in/2012prabhat/"
               target="_blank"
               className="px-6 py-3 rounded-full text-sm font-medium relative overflow-hidden"
               style={{
@@ -155,7 +155,7 @@ const Footer = () => {
             className="text-xs tracking-wider"
             style={{ color: themeColors.summeryText }}
           >
-            © {new Date().getFullYear()} <a href="https://www.linkedin.com/in/sachinpro/"><span style={{ color: themeColors.primaryColor }}>Sachin</span></a> · Coded with intent,
+            © {new Date().getFullYear()} <a href="https://www.linkedin.com/in/2012prabhat/"><span style={{ color: themeColors.primaryColor }}>Prabhat</span></a> · Coded with intent,
             designed with care.
           </motion.p>
 

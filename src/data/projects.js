@@ -1,5 +1,24 @@
 const projects = [
   {
+  title: "Code Slayer",
+  subtitle: "Competitive Coding & Problem-Solving Platform",
+  description:
+    "Code Slayer is a developer-focused platform designed to enhance problem-solving and competitive coding skills. It offers structured coding challenges, real-time code execution, and performance tracking through a clean and intuitive interface. Built with scalability and speed in mind, Code Slayer helps developers sharpen their algorithms and coding fundamentals.",
+  tags: [
+    "Next.js",
+    "React",
+    "JavaScript",
+    "Algorithms",
+    "Problem Solving",
+    "Tailwind CSS",
+    "Performance Tracking",
+  ],
+  image: "/Projects/codeSlayer.png",
+  liveDemo: "https://codexslayer.vercel.app/",
+  githubRepo: "https://github.com/2012prabhat/Code_slayer",
+  projectColor: "#fb2c36",
+},
+  {
     title: "ChatWise",
     subtitle: "AI Chatbot Integration Platform",
     description:

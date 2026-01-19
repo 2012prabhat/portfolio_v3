@@ -88,7 +88,6 @@ const projects = [
       "Healthcare App",
     ],
     image: "/Projects/careBuddy.png",
-    liveDemo: "#",
     githubRepo: "https://github.com/2012prabhat/Care-Buddy",
     projectColor: "#f97316",
   },

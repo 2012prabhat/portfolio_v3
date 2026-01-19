@@ -130,6 +130,7 @@ function ProjectCard({ project, index, isHovered, setHoveredProject }) {
               className="w-full rounded-lg shadow-xl border border-opacity-10"
               src={project.image}
               alt={project.title}
+              
               loading="lazy"
               style={{
                 borderColor: themeColors.border,
@@ -241,7 +242,7 @@ function ProjectCard({ project, index, isHovered, setHoveredProject }) {
       <AnimatePresence>
         {showPopup && (
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 mt-32"
             variants={overlayVariants}
             initial="hidden"
             animate="visible"
@@ -276,11 +277,12 @@ function ProjectCard({ project, index, isHovered, setHoveredProject }) {
               </p>
 
               <div className="space-y-3">
-                <motion.button
-                  className="w-full flex items-center justify-between p-4 rounded-xl border transition-all duration-200 group"
-                  style={{
-                    borderColor: themeColors.border,
-                    backgroundColor: `${themeColors.border}08`,
+                {project?.liveDemo && (
+                  <motion.button
+                    className="w-full flex items-center justify-between p-4 rounded-xl border transition-all duration-200 group"
+                    style={{
+                      borderColor: themeColors.border,
+                      backgroundColor: `${themeColors.border}08`,
                   }}
                   whileHover={{
                     scale: 1.02,
@@ -340,6 +342,7 @@ function ProjectCard({ project, index, isHovered, setHoveredProject }) {
                     />
                   </svg>
                 </motion.button>
+                )}
 
                   {project.githubRepo && (
                 <motion.button
